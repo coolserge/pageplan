@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Page Plan</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div id="reposContainer" class="row">
+            <!-- Card for wasmadd repo -->
+            <div class="col-12 col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">wasmadd</h5>
+                        <p>URL: <a href="https://github.com/coolserge/wasmadd" target="_blank">https://github.com/coolserge/wasmadd</a></p>
+                        <p>PGP Key URL: <a href="https://gist.githubusercontent.com/coolserge/bd305bd73260b61d06954e7c2a982655/raw/ea467d6644fd848ba355640e7714f89734db9da2/file.pgp" target="_blank">https://gist.githubusercontent.com/coolserge/bd305bd73260b61d06954e7c2a982655/raw/ea467d6644fd848ba355640e7714f89734db9da2/file.pgp</a></p>
+                        <button class="btn btn-primary clone-btn" data-repo="wasmadd" data-url="https://github.com/coolserge/wasmadd" data-pgp="https://gist.githubusercontent.com/coolserge/bd305bd73260b61d06954e7c2a982655/raw/ea467d6644fd848ba355640e7714f89734db9da2/file.pgp">Clone</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for wasmmul repo -->
+            <div class="col-12 col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">wasmmul</h5>
+                        <p>URL: <a href="https://github.com/coolserge/wasmmul" target="_blank">https://github.com/coolserge/wasmmul</a></p>
+                        <p>PGP Key URL: <a href="https://gist.githubusercontent.com/coolserge/bd305bd73260b61d06954e7c2a982655/raw/ea467d6644fd848ba355640e7714f89734db9da2/file.pgp" target="_blank">https://gist.githubusercontent.com/coolserge/bd305bd73260b61d06954e7c2a982655/raw/ea467d6644fd848ba355640e7714f89734db9da2/file.pgp</a></p>
+                        <button class="btn btn-primary clone-btn" data-repo="wasmmul" data-url="https://github.com/coolserge/wasmmul" data-pgp="https://gist.githubusercontent.com/coolserge/bd305bd73260b61d06954e7c2a982655/raw/ea467d6644fd848ba355640e7714f89734db9da2/file.pgp">Clone</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.clone-btn').forEach(button => {
+                button.addEventListener('click', async (event) => {
+                    const repoName = event.target.dataset.repo;
+                    const repoUrl = event.target.dataset.url;
+                    const pgpKeyUrl = event.target.dataset.pgp;
+                    await cloneRepo(repoUrl, 'https://sandstonemountain.com', pgpKeyUrl);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
